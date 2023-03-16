@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CardView</string>
+    <string name="nome">CardView</string>
+    <string name="postagem">CardView</string>
+    <string name="btngostei">Gostei</string>
+    <string name="btncomentar">Comentar</string>
+    <string name="usuario_jackiany">Jackiany Silva</string>
+    <string name="agora_mesmo">Agora mesmo</string>
+    <string name="tbtviagemlegal">#tbt viagem legal!</string>
+
 </resources>
