@@ -11,9 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cardview.R;
 
+import java.util.List;
+
+import model.Postagem;
+
 
 //Dentro dessa classe criei outra classe interna para o ViewHolder
 public class PostagemAdapter extends RecyclerView.Adapter<PostagemAdapter.MyViewHolder> {
+
+    private List<Postagem> postagens;
+
+    public PostagemAdapter(List<Postagem> listaPostagens ) {
+        this.postagens = listaPostagens;
+    }
 
     @NonNull
     @Override
@@ -29,20 +39,21 @@ public class PostagemAdapter extends RecyclerView.Adapter<PostagemAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.textNome.setText(("JACKIANY SILVA"));
-        holder.textPostagem.setText("#tbt Viagem legal!");
-        holder.imagePostagem.setImageResource( R.drawable.imagem2);
+        Postagem postagem = postagens.get( position );
+        holder.textNome.setText(postagem.getNome() );
+        holder.textPostagem.setText( postagem.getPostagem() );
+        holder.imagePostagem.setImageResource( postagem.getImagem() );
 
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return postagens.size();
     }
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        private TextView textNome;
+        private  TextView textNome;
         private  TextView textPostagem;
         private ImageView imagePostagem;
 
